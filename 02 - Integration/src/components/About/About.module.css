@@ -1,0 +1,30 @@
+/* styles.module.css */
+
+
+.container {
+    
+    align-items: center;
+    
+    text-align: center;
+  }
+  
+  .title {
+    position: absolute;
+    margin-left: 40px;
+    color: aliceblue;
+    font-size: 100px;
+    margin-bottom: 10px;
+    margin-right: auto;
+  }
+  
+  .subtitle {
+    font-size: 18px;
+    position: absolute;
+    margin-left: 40px;
+    color: rgb(12, 207, 214);
+    font-size: 100px;
+    margin-top: 400px;
+   
+    margin-right: auto;
+  }
+  

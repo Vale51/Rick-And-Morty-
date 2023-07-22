@@ -1,0 +1,36 @@
+.mainDiv {
+   
+    text-align: center;
+    justify-content: space-around;
+    /* Estilos para el div */
+    width: 100%;
+    
+    background-color: rgba(213, 21, 21, 0);  
+    
+   
+}
+
+.childDiv {
+   margin-top: 50px;
+}
+
+ html, body {
+   
+   min-height: 100vh;
+   /*background: rgb(3, 1, 68); Color de fondo del div */
+   background-image: linear-gradient(to right, red, blue);
+   background-repeat: no-repeat;
+   background-size: 100% 100%;
+   animation: gradientChange 5s infinite alternate;
+  }
+
+  @keyframes gradientChange {
+    0% {
+      background: rgb(2, 45, 124)/* or inicial */
+    }
+    
+    
+    100% {
+      background: rgb(3, 1, 68); /* Color final */
+    }
+  }

@@ -1,0 +1,60 @@
+.image {
+  width: 386px;
+  height: auto;
+  float: left;
+  /* margin-right: 250px;  */
+  
+  
+}
+
+.inputAndBtn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  float: right;
+
+  /* margin-right: 50px; */
+  
+}
+
+.input{
+  border: none;
+
+  border-radius: 7px;
+  border-color: rgb(241, 241, 241);
+  font-size: 35px; /* Aumenta el tamaño del texto */
+  width: 300px; /* Ajusta el ancho del input en píxeles */
+  color: rgb(255, 255, 255);
+  background-color: rgba(9, 14, 168, 0.719);
+}
+
+.btn{
+  /* margin: 10px; */
+  cursor: pointer; 
+  border-radius: 12px;
+  border-color: black;
+  border-width: 0px;
+
+  size: 200px;
+  font-size: 25px;
+   /* Aumenta el tamaño del texto */
+  padding: 7px 20px; /* Ajusta el espacio interno del botón */
+  color: rgb(0, 0, 0);
+  background-color: rgb(85, 238, 255);
+}
+
+.btn:hover {
+  background-color: rgba(57, 199, 235, 0.849);
+
+}
+
+.container {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+  

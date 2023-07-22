@@ -1,0 +1,74 @@
+/* Form.module.css */
+
+.formWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Esto asegurará que el contenedor ocupe al menos todo el alto de la ventana del navegador */
+  }
+  
+  /* .formContainer {
+    width: 300px;
+    margin-top: 10px;  Agrega un margen para separar el formulario del borde de la ventana
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+  } */
+
+.container{
+    display: flex;
+    justify-content: space-around;
+}
+
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    margin-right: 180px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+  }
+  
+  .label {
+    display: block;
+    font-size: 16px;
+    padding: 20px;
+    
+  }
+
+  .formPhoto{
+
+  }
+  
+  .inputField {
+    width: 100%;
+    font-size: 20px;
+    margin-bottom: 15px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+  }
+  
+  .errorMessage {
+    color: red;
+    margin-top: 10px;
+  }
+  
+  .submitButton {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .submitButton:hover {
+    background-color: #0056b3;
+  }
+  
