@@ -20,10 +20,10 @@
 
 .input{
   border: none;
-
-  border-radius: 7px;
+  padding: 10px;
+  border-radius: 15px 0 0  15px;
   border-color: rgb(241, 241, 241);
-  font-size: 35px; /* Aumenta el tamaño del texto */
+  font-size: 20px; /* Aumenta el tamaño del texto */
   width: 300px;
   /*width: 20%;*/
 
@@ -31,10 +31,15 @@
   background-color: rgba(9, 14, 168, 0.719);
 }
 
+.input:focus {
+  outline: none; /* Evita que se muestre el borde predeterminado */
+  background-color:#03094d;
+}
+
 .btn{
   /* margin: 10px; */
   cursor: pointer; 
-  border-radius: 12px;
+  border-radius: 0 15px 15px 0 ;
   border-color: black;
   border-width: 0px;
 
@@ -42,8 +47,8 @@
   font-size: 25px;
    /* Aumenta el tamaño del texto */
   padding: 7px 20px; /* Ajusta el espacio interno del botón */
-  color: rgb(0, 0, 0);
-  background-color: rgb(85, 238, 255);
+  color: rgb(255, 255, 255);
+  background-color: rgb(9, 14, 168, 0.719);
 }
 
 .btn:hover {

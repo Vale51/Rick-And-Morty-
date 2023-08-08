@@ -5,24 +5,33 @@ import { Link } from 'react-router-dom';
 import { addFav, removeFav } from '../../redux/actions';
 import { connect } from 'react-redux';
 
-export function Card({ id, name, status, species, gender, origin, image, myFavorites , onClose, addFav, removeFav }) {
+export function Card({ id, name, status, species, gender, origin, image, myFavorites , onClose, addFav, removeFav}) {
   const [isFav, setIsFav] = useState(false);
+  const [removeCard, setRemoveCard] = useState(false); //estado para oscurecer el fondo cuando mouse hover en una Card
+  const [sizeChange, setsizeChange] = useState(false); //estado para oscurecer el fondo cuando mouse hover en una Card
+
+
+  
+
 
   const handleClose = () => {
-    onClose(id);
+    setRemoveCard(true)
+    setTimeout(() => {
+      onClose(id);
+    }, 1000);
+    
   };
 
   useEffect(() => {
-    
 
     myFavorites.forEach((fav) => {
-    //   console.log(fav.id);
-    // console.log(id);
        if (fav.id === id) {
           setIsFav(true);
        }
     });
  }, [myFavorites]);
+
+
 
   function handleFavorite() {
     
@@ -41,16 +50,22 @@ export function Card({ id, name, status, species, gender, origin, image, myFavor
         image
       });
     }
-    console.log(id);
-    console.log(isFav);
+    
+    // console.log(isFav);
   }
+
+
 
   return (
     
-
-
-
-    <div className={styles.card}>
+     <div //{styles.card}
+      
+      className={`${styles.card} ${removeCard ? styles.exitAnim : ''} ${sizeChange ? styles.sizeChange : ''}`}
+      
+      onMouseEnter={() => setsizeChange(true)}  
+      onMouseLeave={() => setsizeChange(false)} 
+    >
+      
       {isFav ? (
         <button className={styles.favBtn} onClick={handleFavorite}>❤️</button>
       ) : (
@@ -60,7 +75,7 @@ export function Card({ id, name, status, species, gender, origin, image, myFavor
         X
       </button>
 
-      <Link to={`/detail/${id}`}>
+      <Link className={styles.anchorStyle} to={`/detail/${id}`}>
         <h2 className={styles.name}>{name}</h2>
       </Link>
 
@@ -72,7 +87,6 @@ export function Card({ id, name, status, species, gender, origin, image, myFavor
         <h2 className={styles.species}>{species}</h2>
       </div>
 
-      
     </div>
   );
 }

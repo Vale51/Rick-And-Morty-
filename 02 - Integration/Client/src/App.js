@@ -16,6 +16,9 @@ import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 function App() {
    
    const [ characters, setCharacters ] = useState([])
+    //estado para oscurecer el fondo cuando mouse hover en una Card
+   
+
    const [ access, setAccess ] = useState(false)
    const navigate = useNavigate();
    const location = useLocation();
@@ -34,7 +37,11 @@ function App() {
       !access && navigate('/');
    }, [access]);
 
+   
+   
+
    function onSearch(id) {
+    
       axios(`http://localhost:3001/rickandmorty/character/${id}`)
       .then(({ data }) => {
          if (data.name) {
@@ -45,6 +52,7 @@ function App() {
             if (!idS.includes(data.id)) { //si la id de data NO existe en idS
                setCharacters((oldChars) => [...oldChars, data]); //se agrega data
             }
+            
             
          } else {
             window.alert('');
@@ -71,14 +79,20 @@ function App() {
 
    
    return (
+      // className={`${styles.mainDiv} ${darkenBackground ? styles.darkBackground : ''}`}
       
-      <div className={styles.mainDiv}>
-         {location.pathname !== '/' && <Nav onSearch={onSearch}/>}
+      <div>
+         {location.pathname!=="/" && <Nav onSearch={onSearch} currentPath={location.pathname} />}
          
          <Routes>
             <Route path="/" element={<Form login={login}/>}/>
-            <Route path="/favorites" element={<Favorites onClose={onClose} characters={characters}/>} />
-            <Route path="/home" element={<Cards characters={characters} onClose={onClose} />} />
+            <Route path="/favorites" element={<Favorites onClose={onClose} characters={characters} />} />
+            <Route path="/home" 
+            
+            element={<Cards characters={characters} 
+            onClose={onClose} 
+            />} 
+           />
             <Route path="/about" element={<About />} />
             <Route path="/detail/:id" element={<Detail />} />
          </Routes>

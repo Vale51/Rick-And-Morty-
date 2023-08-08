@@ -9,6 +9,7 @@ import style from "./Favorites.module.css"
 
 export function Favorites({ myFavorites, onClose, characters }) {
   
+  
   const dispatch = useDispatch()
 
   const existingFavCharacters = [];

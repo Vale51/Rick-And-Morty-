@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import styles from "./Detail.module.css";
 
 function Detail() {
+  
   const { id } = useParams();
   const [character, setCharacter] = useState({});
 

@@ -1,6 +1,6 @@
 
 
-.gallery {
+/* .gallery { original
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -9,16 +9,28 @@
     grid-gap: 20px;
   }
 
-  .container {
+  .container { original
   display: flex;
   flex-wrap: wrap;
+} */
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Una columna */
+  grid-auto-rows: minmax(min-content, max-content); /* Ajustar el alto según el contenido */
+  justify-items: center; /* Alinear elementos a la izquierda */
+  align-content: end; /* Alinear elementos en la parte inferior */
+  gap: 10px; /* Espacio entre elementos */
+
 }
 
-.row {
+
+
+/* .row { original
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-}
+} */
 
   
   

@@ -3,34 +3,44 @@
     text-align: center;
     justify-content: space-around;
     /* Estilos para el div */
-    width: 100%;
+    /* width: 100%; */
     
-    background-color: rgba(213, 21, 21, 0);  
+    background-color: rgba(196, 86, 86, 0.945);  
     
    
 }
 
-.childDiv {
+body {
+  min-height: 100vh; /* El 100vh asegura que el cuerpo ocupe al menos el 100% de la altura de la ventana visible */
+  margin: 0; /* Elimina los márgenes predeterminados del cuerpo */
+  padding: 0; /* Elimina el relleno predeterminado del cuerpo */
+}
+
+
+
+.darkBackground {
+  background-color: rgb(12, 14, 29); /* Color oscuro con opacidad */
+  /* Otros estilos para oscurecer el fondo si es necesario */
+}
+
+
+.childDiv{
    margin-top: 50px;
 }
 
-  body {
-   
-   min-height: 100vh;
-   /*background: rgb(3, 1, 68); Color de fondo del div */
-   background-image: linear-gradient(to right, red, blue);
-   background-repeat: no-repeat;
-   background-size: 100% 100%;
-   animation: gradientChange 5s infinite alternate;
-  }
+.mainDivGradient {
+background-size: contain;
+  
+  animation: gradientChange 5s infinite alternate;
+}
 
   @keyframes gradientChange {
     0% {
-      background: rgb(2, 45, 124)/* or inicial */
-    }
-    
+      background: rgb(2, 45, 124);
+    } 
+
     
     100% {
-      background: rgb(3, 1, 68); /* Color final */
-    }
-  }
+      background: rgb(3, 1, 68); 
+    } 
+  } 

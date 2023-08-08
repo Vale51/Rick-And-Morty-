@@ -1,18 +1,42 @@
+.sizeChange{
+  animation: changeSize 2s forwards;
+}
 
+
+@keyframes changeSize {
+  0% {
+    transform: scale(1); /* Tamaño original */
+  }
+  100% {
+    transform: scale(1.1); /* Nuevo tamaño deseado */
+  }
+}
+
+.anchorStyle {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+}
+
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
 
 .name {
-  
-  overflow-wrap: break-word;
-  color: rgb(255, 255, 255);
-  text-decoration: underline;
-  text-decoration-color: rgb(8, 177, 224);
-  margin-left: 53px;
-  right: 20px;
-  max-width: 200px;
-  margin-top: 25px;
-  margin-bottom: 12px; 
-  
+overflow-wrap: break-word;
+    color: rgb(255, 255, 255);
+    right: 20px;
+    max-width: 200px;
+    justify-content: center;
 }
+
+
 
 .name:hover {
   color: rgba(255, 255, 255, 0.815);
@@ -23,25 +47,56 @@
   max-width: 150px;
 }
 .card {
+
   box-shadow: 0px 10px 10px rgb(0, 0, 0);
   
-    color: rgba(255, 255, 255, 0.884);
-    border: none;
-    border-radius: 10px;
-    /* padding: 10px; */
-    padding-left: 10px;
-    padding-top: 10px;
-    padding-right: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    
-    background-image: linear-gradient(#0dace67c, #8b1facd8); 
-    display: flex;
-    flex-direction: column;
-    
-    position: relative; 
+  color: rgba(255, 255, 255, 0.884);
+  border: none;
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  
+  background-image: linear-gradient(#0dace67c, #8b1facd8); 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  position: relative; 
+  z-index: 1;
+
+  animation: slideInX 1s forwards;
+  transition: transform 0.3s ease;
     
   }
+
+
+  .exitAnim{
+    animation: slideOutX 0.5s forwards;
+  }
+
+  @keyframes slideInX {
+    from {
+      transform: translateX(-2000px) rotate(0deg);
+    
+    }
+    to {
+      transform: translateX(0) rotate(360deg);
+    }
+  }
+
+  @keyframes slideOutX {
+    from {
+      transform: translateX(0px); /* Posición inicial (sin desplazamiento) */
+    }
+    to {
+      transform: translateX(-1000px); /* Posición final (desplazamiento en el eje X) */
+    }
+  }
+
+
+  
   
   .closeButton {
     width: 30px;
@@ -93,10 +148,9 @@
   }
 
  .desc {
-    
+  align-items: center;
     display: flex;
     
-    /* align-items: center; Opcional: alinea verticalmente los elementos */
-    justify-content: space-around; /* Espacio igual entre los elementos */
+    justify-content: space-around; 
   }
    

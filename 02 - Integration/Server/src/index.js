@@ -1,29 +1,28 @@
-const { log } = require("console");
-const getCharById = require("./controllers/getCharById")
+const express = require('express');
 
-const cors = require("cors"); // Importa el paquete cors
-const http = require("http");
+const server = express()
+const router = require('./routes')
 
-const app = http.createServer((req, res) => {
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'GET');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+const PORT = 3001;
 
-  if (req.url.includes("/rickandmorty/character")) {
-    const id = req.url.split("/").pop();
-    getCharById(res, id);
-  } else {
-    res.writeHead(404, { 'Content-Type': 'text/plain' });
-    res.end('Ruta no encontrada');
-  }
-  
+server.use((req, res, next) => {
+   res.header('Access-Control-Allow-Origin', '*');
+   res.header('Access-Control-Allow-Credentials', 'true');
+   res.header(
+      'Access-Control-Allow-Headers',
+      'Origin, X-Requested-With, Content-Type, Accept'
+   );
+   res.header(
+      'Access-Control-Allow-Methods',
+      'GET, POST, OPTIONS, PUT, DELETE'
+   );
+   next();
+});
+
+server.use(express.json())
+server.use('/rickandmorty', router)
 
 
-})
-
-
-
-
-app.listen(3001, () => {
-  console.log('Server is running on port 3001');
+server.listen(PORT, () => {
+   console.log('Server raised in port: ' + PORT);
 });
